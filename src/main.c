@@ -9,6 +9,9 @@
 */
 
 int main(int argc, char *argv[]){
+    //Init
+    int* memory = NULL; // Initialize to NULL
+
     //Print Parameters
     printf("Starting VRE with following parameters:\n");
     for(int i = 1; i < argc; i++){
@@ -25,13 +28,13 @@ int main(int argc, char *argv[]){
     int memsize = atoi(argv[1]);
     if (memsize > 0){
         int *memory = malloc(memsize * sizeof(int));
+        if (memory == NULL){
+            printf("Unable to allocate memory, exiting environment\n");
+            return 1;
+        }
     } else {
         printf("Error allocating memory");
         return 2;
-    }
-    if (memory == NULL){
-        printf("Unable to allocate memory, exiting environment\n");
-        return 1;
     }
 
 
