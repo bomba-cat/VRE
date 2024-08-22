@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 #include "headers/intepreter.h"
+#include "headers/memory.h"
 
 //Returns status and error code of execution, anything over 0 is an error
-int executeFile(char *path){
+int loadFile(char *path, int *memstart, int memsize){
     //Buffering the path
     char buf[0x100];
     snprintf(buf, sizeof buf - 1, "%s", path);

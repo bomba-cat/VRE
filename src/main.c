@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "headers/intepreter.h"
+#include "headers/memory.h"
 
 /*
     Current Argument Setup
@@ -47,7 +48,7 @@ int main(int argc, char *argv[]){
     }
 
     //Lets Read the file and output its binary content
-    code = executeFile(argv[2]); //Works like magic
+    code = loadFile(argv[2], memsize, &memory); //This is so gonna memory leak ngl
     if (code > 0){
         printf("An error occured with the intepreter. Exiting...");
         return code;

@@ -1,6 +1,6 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-int executeFile(char *path);
+int loadFile(char *path, int *memstart, int memsize);
 
 #endif
