@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
     }
 
     //Lets Read the file and output its binary content
-    
+    executeFile(argv[2]);
 
     //Free memory before exiting
     printf("Freeing memory\n");
