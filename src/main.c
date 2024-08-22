@@ -37,7 +37,7 @@ int main(int argc, char *argv[]){
         return 2;
     }
 
-
+    
 
     //Free memory before exiting
     printf("Freeing memory\n");
