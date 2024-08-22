@@ -23,7 +23,12 @@ int main(int argc, char *argv[]){
     //Allocate memory the VRE is going to use
     printf("Allocating memory\n");
     int memsize = atoi(argv[1]);
-    int *memory = malloc(memsize * sizeof(int));
+    if (memsize > 0){
+        int *memory = malloc(memsize * sizeof(int));
+    } else {
+        printf("Error allocating memory");
+        return 2;
+    }
     if (memory == NULL){
         printf("Unable to allocate memory, exiting environment\n");
         return 1;
