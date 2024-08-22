@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "headers/intepreter.h"
+
 /*
     Current Argument Setup
     1. Memory
