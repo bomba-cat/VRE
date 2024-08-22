@@ -45,5 +45,6 @@ int main(int argc, char *argv[]){
     //Free memory before exiting
     printf("Freeing memory\n");
     free(memory);
+    printf("Exiting...");
     return 0;
 }

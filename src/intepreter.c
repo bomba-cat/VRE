@@ -3,10 +3,10 @@
 #include "headers/intepreter.h"
 
 //Returns status and error code of execution, anything over 0 is an error
-int executeFile(char path[]){
+int executeFile(char *path){
     //Buffering the path
     char buf[0x100];
-    snprintf(buf, sizeof(buf), "%s.vbf", path);
+    snprintf(buf, sizeof buf - 1, "%s", path);
     //Ready up the executable
     FILE *executable;
     executable = fopen(buf, "rb");
@@ -26,8 +26,10 @@ int executeFile(char path[]){
     }
 
     //Almost forgot this like a silly billy
+    printf("\nClosing %s\n", buf);
     fclose(executable);
 
     // WOHOOO NO ERRORS!!!
+    printf("Closing intepreter...");
     return 0;
 }
