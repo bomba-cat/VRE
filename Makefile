@@ -28,5 +28,4 @@ install: $(BUILD_DIR)/VRE
 	chmod +x $(PATH_DIR)/VRE
 	echo "You must add ~/.local/bin to your PATH for VRE to work"
 
-
 .PHONY: all clean

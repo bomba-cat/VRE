@@ -35,6 +35,7 @@ int main(int argc, char *argv[]){
     printf("Allocating memory\n");
     int memsize = atoi(argv[1]);
     if (memsize > 0){
+        //Would be kinda silly if anything bad happened xd
         int *memory = malloc(memsize);
         if (memory == NULL){
             printf("Unable to allocate memory, exiting environment\n");
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]){
 
     //Free memory before exiting
     printf("Freeing memory\n");
-    free(memory);
+    free(memory); //This code saves lifes
     printf("Exiting...\n"); //stop forgetting newlines you silly billy              
     return 0;
 }
