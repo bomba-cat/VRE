@@ -39,6 +39,7 @@ int main(int argc, char *argv[]){
         return 2;
     }
 
+    //Lets Read the file and output its binary content
     
 
     //Free memory before exiting

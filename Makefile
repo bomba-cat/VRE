@@ -12,7 +12,7 @@ all: $(BUILD_DIR)/VRE
 
 $(BUILD_DIR)/VRE: $(OBJECTS)
 	mkdir -p $(dir $@)
-	$(CC) 					$(OBJECTS) -o $@
+	$(CC) $(OBJECTS) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)

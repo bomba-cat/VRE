@@ -10,4 +10,4 @@ VRE aims to provide an translation layer for applications to run on every possib
 VRE Makefile supports these building commands:
 - `make`
 - `make clean`
-- `make install`, not yet but planned
+- `make install`, -# not yet but planned
