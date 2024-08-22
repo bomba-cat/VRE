@@ -13,6 +13,7 @@
 int main(int argc, char *argv[]){
     //Init
     int* memory = NULL; // Initialize to NULL
+    int code; //error code the intepreter returns
 
     //Print Parameters
     printf("Starting VRE with following parameters:\n");
@@ -24,6 +25,11 @@ int main(int argc, char *argv[]){
         } else {
             printf("    P.%d:                %s\n", i, argv[i]);
         }
+    }
+    //Trigger a failsafe incase arg1 or arg2 arent specified
+    if (argc < 1 || argc < 2){
+        printf("Not enough arguments presented. Exiting...\n");
+        return 3;
     }
     //Allocate memory the VRE is going to use
     printf("Allocating memory\n");
@@ -40,7 +46,11 @@ int main(int argc, char *argv[]){
     }
 
     //Lets Read the file and output its binary content
-    executeFile(argv[2]); //Works like magic
+    code = executeFile(argv[2]); //Works like magic
+    if (code > 0){
+        printf("An error occured with the intepreter. Exiting...");
+        return code;
+    }
 
     //Free memory before exiting
     printf("Freeing memory\n");
