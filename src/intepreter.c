@@ -30,6 +30,6 @@ int executeFile(char *path){
     fclose(executable);
 
     // WOHOOO NO ERRORS!!!
-    printf("Closing intepreter...");
+    printf("Closing intepreter...\n"); //silly billy not using newlines
     return 0;
 }

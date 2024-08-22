@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
     printf("Starting VRE with following parameters:\n");
     for(int i = 1; i < argc; i++){
         if (i == 1){
-            printf("    Memory:             %s\n", argv[i]);
+            printf("    Memory:             %s bytes\n", argv[i]);
         } else if (i == 2){
             printf("    Executable File:    %s\n", argv[i]);
         } else {
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
     printf("Allocating memory\n");
     int memsize = atoi(argv[1]);
     if (memsize > 0){
-        int *memory = malloc(memsize * sizeof(int));
+        int *memory = malloc(memsize);
         if (memory == NULL){
             printf("Unable to allocate memory, exiting environment\n");
             return 1;
@@ -40,11 +40,11 @@ int main(int argc, char *argv[]){
     }
 
     //Lets Read the file and output its binary content
-    executeFile(argv[2]);
+    executeFile(argv[2]); //Works like magic
 
     //Free memory before exiting
     printf("Freeing memory\n");
     free(memory);
-    printf("Exiting...");
+    printf("Exiting...\n"); //stop forgetting newlines you silly billy              
     return 0;
 }
