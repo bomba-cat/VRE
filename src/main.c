@@ -36,7 +36,7 @@ int main(int argc, char *argv[]){
     printf("Allocating memory\n");
     int memsize = atoi(argv[1]);
     if (memsize > 0){
-        //Would be kinda silly if anything bad happened xd
+        //Would be kinda silly if anything bad happened xd  
         int *memory = malloc(memsize);
         if (memory == NULL){
             printf("Unable to allocate memory, exiting environment\n");
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
     }
 
     //Lets Read the file and output its binary content
-    code = loadFile(argv[2], memsize, &memory); //This is so gonna memory leak ngl
+    code = loadFile(argv[2], memory, memsize); //This is so gonna memory leak ngl
     if (code > 0){
         printf("An error occured with the intepreter. Exiting...");
         return code;

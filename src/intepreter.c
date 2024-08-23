@@ -22,7 +22,8 @@ int loadFile(char *path, int *memstart, int memsize){
     while (fread(instruction, 1, sizeof(instruction), executable) > 0) {
         // Print the binary data (in hex format)
         for (int i = 0; i < sizeof(instruction); i++) {
-            printf("%02x ", (unsigned char)instruction[i]);
+            //printf("%02x ", (unsigned char)instruction[i]);
+            mapFile(memstart, memsize, (char*)instruction);
         }
     }
 
