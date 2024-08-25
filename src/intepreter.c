@@ -17,13 +17,11 @@ int loadFile(char *path, int *memstart, int memsize){
         return 1; // Return an error code
     }
     //Prepare space for instruction
-    char instruction[100];
+    char instruction[3];
     //Loop instruction
-    while (fread(instruction, 1, sizeof(instruction), executable) > 0) {
-        // Print the binary data (in hex format)
-        for (int i = 0; i < sizeof(instruction); i++) {
-            //printf("%02x ", (unsigned char)instruction[i]);
-            mapFile(memstart, memsize, (char*)instruction);
+    while (fscanf(executable, "%2x", &instruction) == 1) {
+        for (int i = 0; i < sizeof(instruction); i++){
+            mapFile(memstart, memsize, instruction);
         }
     }
 
